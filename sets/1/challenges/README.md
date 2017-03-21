@@ -1,6 +1,14 @@
-# 01: Convert hex to base64
+<!-- TOC depthFrom:1 depthTo:1 orderedList:true -->
+
+1. [Convert hex to base64](#convert-hex-to-base64)
+2. [Fixed XOR](#fixed-xor)
+
+<!-- /TOC -->
+
+# Convert hex to base64
 ## Source
-https://cryptopals.com/sets/1/challenges/1
+[https://cryptopals.com/sets/1/challenges/1](https://cryptopals.com/sets/1/challenges/1)
+
 ## Example
 ### Input
 ```
@@ -13,11 +21,14 @@ SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t
 ## Tip
 Always operate on raw bytes, never on encoded strings.
 Only use hex and base64 for pretty-printing.
+## Solution
+See: [s1c1.py](https://github.com/aawc/cryptopals/blob/master/sets/1/challenges/s1c1.py)
 
 
-# 02: Fixed XOR
+# Fixed XOR
 ## Source
-https://cryptopals.com/sets/1/challenges/2
+[https://cryptopals.com/sets/1/challenges/2](https://cryptopals.com/sets/1/challenges/2)
+
 ## Description
 Write a function that takes two equal-length buffers and produces their XOR combination.
 ## Example
@@ -34,3 +45,5 @@ input_2:
 ```
 746865206b696420646f6e277420706c6179
 ```
+## Solution
+See: [s1c2.py](https://github.com/aawc/cryptopals/blob/master/sets/1/challenges/s1c2.py)
