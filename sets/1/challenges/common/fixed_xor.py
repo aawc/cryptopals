@@ -1,17 +1,18 @@
-import HexToBase64
+import hex_to_base64
 import sys
 sys.path.append('/usr/local/lib/python2.7/site-packages')
 from Crypto.Util import strxor
 
 def FixedXor(input_1, input_2):
-  decoded_1 = HexToBase64.HexToBase64(input_1)
-  decoded_2 = HexToBase64.HexToBase64(input_2)
-  return strxor(decoded_1, decoded_2)
+  decoded_1 = input_1.decode("hex")
+  decoded_2 = input_2.decode("hex")
+  return strxor.strxor(decoded_1, decoded_2)
 
 def main():
-  assert "60426042" == FixedXor("deadbeef", "beefdead"), FixedXor(
-    "deadbeef", "beefdead")
-  assert "746865206b696420646f6e277420706c6179" == FixedXor(
+  expected = "746865206b696420646f6e277420706c6179"
+  assert expected.decode("hex") == FixedXor(
+    "1c0111001f010100061a024b53535009181c",
+    "686974207468652062756c6c277320657965"), FixedXor(
     "1c0111001f010100061a024b53535009181c",
     "686974207468652062756c6c277320657965")
 
