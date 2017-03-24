@@ -1,5 +1,12 @@
+import HexToBase64
+import sys
+sys.path.append('/usr/local/lib/python2.7/site-packages')
+from Crypto.Util import strxor
+
 def FixedXor(input_1, input_2):
-  return "%x" % (int(input_1, 16) ^ int(input_2, 16))
+  decoded_1 = HexToBase64.HexToBase64(input_1)
+  decoded_2 = HexToBase64.HexToBase64(input_2)
+  return strxor(decoded_1, decoded_2)
 
 def main():
   assert "60426042" == FixedXor("deadbeef", "beefdead"), FixedXor(
