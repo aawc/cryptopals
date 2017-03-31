@@ -1,4 +1,3 @@
-import hex_to_base64
 import sys
 sys.path.append('/usr/local/lib/python2.7/site-packages')
 from Crypto.Util import strxor
