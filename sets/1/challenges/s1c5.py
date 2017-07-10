@@ -2,15 +2,13 @@ import itertools
 
 def MultipleCharacterXOR(input, key):
   out = ""
-  for i, j in itertools.izip_longest(range(len(input)), range(len(key))):
-    vi = i
-    vj = j
-    if vi is None:
-      vi = vj % len(input)
-    elif vj is None:
-      vj = vi % len(key)
-    input_c = input[vi]
-    key_c = key[vj]
+  j = 0
+  while j < max(len(input), len(key)):
+    i = j % len(input)
+    k = j % len(key)
+    j += 1
+    input_c = input[i]
+    key_c = key[k]
     out += chr(ord(input_c) ^ ord(key_c))
   return out.encode("hex")
 
