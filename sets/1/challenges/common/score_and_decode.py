@@ -4,7 +4,7 @@ import sys
 sys.path.append('/usr/local/lib/python2.7/site-packages')
 from Crypto.Util import strxor
 
-def score(s):
+def EnglishLikeScore(s):
   total = 0
   freq = english_alphabet_freq.LetterFrequency()
   for c in s:
@@ -13,10 +13,10 @@ def score(s):
       total += freq[c_lower]
   return total
 
-def sortby(p):
-  return score(p[1])
+def SortBy(p):
+  return EnglishLikeScore(p[1])
 
 def ScoreAndDecode(s):
   decoded_s = s.decode("hex")
   return max([(
-      i, strxor.strxor_c(decoded_s, i)) for i in range(0, 256)], key=sortby)
+      i, strxor.strxor_c(decoded_s, i)) for i in range(0, 256)], key=SortBy)

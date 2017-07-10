@@ -3,6 +3,7 @@
 1. [Convert hex to base64](#convert-hex-to-base64)
 2. [Fixed XOR](#fixed-xor)
 3. [Single-byte XOR cipher](#single-byte-xor-cipher)
+4. [Detect single-character XOR](#detect-single-character-xor)
 
 <!-- /TOC -->
 
@@ -69,3 +70,11 @@ Evaluate each output and choose the one with the best score.
 You now have our permission to make "ETAOIN SHRDLU" jokes on Twitter.
 ## Solution
 See: [s1c3.py](https://github.com/aawc/cryptopals/blob/master/sets/1/challenges/s1c3.py)
+
+# Detect single-character XOR
+## Source
+[https://cryptopals.com/sets/1/challenges/4](https://cryptopals.com/sets/1/challenges/4)
+## Description
+One of the 60-character strings in [this file](sets/1/challenges/4.txt) has been encrypted by single-character XOR.
+Find it.
+(Your code from #3 should help.)
