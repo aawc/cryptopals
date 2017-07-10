@@ -1,13 +1,8 @@
 from common import score_and_decode as sad
+from common import read_lines
 
-def ReadLines(filename):
-  content = []
-  with open(filename) as f:
-    content = [x.rstrip() for x in f.readlines()]
-  return content
-
-def SingleCharacterXOR(filename):
-  decoded = [sad.ScoreAndDecode(line)[1] for line in ReadLines(filename)]
+def SingleCharacterXOR(f):
+  decoded = [sad.ScoreAndDecode(line)[1] for line in read_lines.ReadLines(f)]
   scores = [sad.EnglishLikeScore(l) for l in decoded]
   max_index = scores.index(max(scores))
   return max_index, scores[max_index], decoded[max_index]
