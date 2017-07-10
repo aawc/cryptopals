@@ -26,8 +26,7 @@ SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t
 Always operate on raw bytes, never on encoded strings.
 Only use hex and base64 for pretty-printing.
 ## Solution
-See: [s1c1.py](https://github.com/aawc/cryptopals/blob/master/sets/1/challenges/s1c1.py)
-
+See: [s1c1.py](s1c1.py)
 
 # Fixed XOR
 ## Source
@@ -50,7 +49,7 @@ input_2:
 746865206b696420646f6e277420706c6179
 ```
 ## Solution
-See: [s1c2.py](https://github.com/aawc/cryptopals/blob/master/sets/1/challenges/s1c2.py)
+See: [s1c2.py](s1c2.py)
 
 
 # Single-byte XOR cipher
@@ -71,18 +70,19 @@ Evaluate each output and choose the one with the best score.
 ## Achievement Unlocked
 You now have our permission to make "ETAOIN SHRDLU" jokes on Twitter.
 ## Solution
-See: [s1c3.py](https://github.com/aawc/cryptopals/blob/master/sets/1/challenges/s1c3.py)
+See: [s1c3.py](s1c3.py)
 
 # Detect single-character XOR
 ## Source
 [https://cryptopals.com/sets/1/challenges/4](https://cryptopals.com/sets/1/challenges/4)
 ## Description
-One of the 60-character strings in [this file](sets/1/challenges/4.txt) has been encrypted by single-character XOR. Find it.
+One of the 60-character strings in [this](4.txt) file has been encrypted by
+single-character XOR. Find it.
 
 (Your code from #3 should help.)
 
 ## Solution
-See: [s1c4.py](https://github.com/aawc/cryptopals/blob/master/sets/1/challenges/s1c4.py)
+See: [s1c4.py](s1c4.py)
 
 # Repeating-key XOR
 ## Source
@@ -110,7 +110,7 @@ mail. Encrypt your password file. Your .sig file. Get a feel for it. I promise,
 we aren't wasting your time with this.
 
 ## Solution
-See: [s1c5.py](https://github.com/aawc/cryptopals/blob/master/sets/1/challenges/s1c5.py)
+See: [s1c5.py](s1c5.py)
 
 # Break repeating-key XOR
 
@@ -124,8 +124,8 @@ coding. The other challenges in this set are there to bring you up to speed.
 This one is there to qualify you. If you can do this one, you're probably just
 fine up to Set 6.
 
-There's a file [here](sets/1/challenges/6.txt). It's been base64'd after being
-encrypted with repeating-key XOR.
+There's a file [here](6.txt). It's been base64'd after being encrypted with
+repeating-key XOR.
 
 Decrypt it.
 
@@ -138,13 +138,13 @@ strings. The Hamming distance is just the number of differing bits. The distance
 between: ```this is a test``` and ```wokka wokka!!!``` is **37**. Make sure your
 code agrees before you proceed.
 
-3. For each KEYSIZE, take the first KEYSIZE worth of bytes, and the second KEYSIZE
-worth of bytes, and find the edit distance between them. Normalize this result
-by dividing by KEYSIZE.
+3. For each KEYSIZE, take the first KEYSIZE worth of bytes, and the second
+KEYSIZE worth of bytes, and find the edit distance between them. Normalize this
+result by dividing by KEYSIZE.
 
-4. The KEYSIZE with the smallest normalized edit distance is probably the key. You
-could proceed perhaps with the smallest 2-3 KEYSIZE values. Or take 4 KEYSIZE
-blocks instead of 2 and average the distances.
+4. The KEYSIZE with the smallest normalized edit distance is probably the key.
+You could proceed perhaps with the smallest 2-3 KEYSIZE values. Or take 4
+KEYSIZE blocks instead of 2 and average the distances.
 
 5. Now that you probably know the KEYSIZE: break the ciphertext into blocks of
 KEYSIZE length.
@@ -152,12 +152,12 @@ KEYSIZE length.
 6. Now transpose the blocks: make a block that is the first byte of every block,
 and a block that is the second byte of every block, and so on.
 
-7. Solve each block as if it was single-character XOR. You already have code to do
-this.
+7. Solve each block as if it was single-character XOR. You already have code to
+do this.
 
-8. For each block, the single-byte XOR key that produces the best looking histogram
-is the repeating-key XOR key byte for that block. Put them together and you have
-the key.
+8. For each block, the single-byte XOR key that produces the best looking
+histogram is the repeating-key XOR key byte for that block. Put them together
+and you have the key.
 
 This code is going to turn out to be surprisingly useful later on. Breaking
 repeating-key XOR ("Vigenere") statistically is obviously an academic exercise,
