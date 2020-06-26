@@ -26,7 +26,7 @@ SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t
 Always operate on raw bytes, never on encoded strings.
 Only use hex and base64 for pretty-printing.
 ## Solution
-See: [s1c1.py](s1c1.py)
+See: [s1c1.py](s1c1.py), [s1c1.go](s1c1.go)
 
 # Fixed XOR
 ## Source
